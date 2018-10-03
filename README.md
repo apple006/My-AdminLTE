@@ -14,7 +14,9 @@
 
 2.1 新增 index_iframe.html，删除 Content Header 和 Main content，新增 Content Tab 和 Iframe，并给 body 元素新增 class = "fixed"；
 
-2.2 新增 main.html，修改内容，设置为 Iframe src，作为首页。
+2.2 新增 main.html，设置为 Iframe src，作为首页；
+
+2.3 修改 build/less/core.less：`.main-sidebar + .content-wrapper { margin-left: @sidebar-width; }`。
 
 ### 3. Ajax 模式
 
