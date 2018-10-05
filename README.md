@@ -2,22 +2,16 @@
 
 但是 AdminLTE 原始版本还是不能满足我的需求，所以我对它做了如下修改：
 
-### 1. 新增标签页
+### 1. 添加标签栏
 
-1.1 新增 build/js/ContentTabs.js，并在 Gruntfile.js 的 grunt.initConfig.concat.dist.src 中新增 `'build/js/ContentTabs.js'`；
-
-1.2 新增 build/less/content-tabs.less，并在 AdminLTE.less 中 `@import "content-tabs";`；
-
-1.3 新增 build/less/skins/skin-content-tabs.less，并在 _all-skins.less 中 `@import "skin-content-tabs.less";`。
+* 点击菜单，如果标签页已存在选中标签页，不存在新增标签页；
+* 点击标签页，选中菜单，标签页滚动到选中标签页的位置；
+* 关闭标签页，标签页未选中就删除标签页，标签页选中就选中上一个标签页；
+* 向左向右滚动标签页；
+* 右键菜单：刷新标签页、关闭其它标签页、关闭所有标签页。
 
 ### 2. Iframe 模式
 
-2.1 新增 index_iframe.html，删除 Content Header 和 Main content，新增 Content Tab 和 Iframe，并给 body 元素新增 class = "fixed"；
-
-2.2 新增 main.html，设置为 Iframe src，作为首页；
-
-2.3 修改 build/less/core.less：`.main-sidebar + .content-wrapper { margin-left: @sidebar-width; }`。
+页面固定高度，Footer 固定在底部，iframe 的新增、显示与删除对应标签页的操作。
 
 ### 3. Ajax 模式
-
-…………
