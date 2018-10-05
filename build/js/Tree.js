@@ -105,6 +105,7 @@
 
     $(this.element).on('click', this.options.trigger, function (event) {
       that.toggle($(this), event);
+      return false;
     });
   };
 

@@ -153,7 +153,8 @@ module.exports = function (grunt) { // jshint ignore:line
           'build/js/Layout.js',
           'build/js/PushMenu.js',
           'build/js/TodoList.js',
-          'build/js/Tree.js'
+          'build/js/Tree.js',
+          'build/js/ContentTabs.js'
         ],
         dest: 'dist/js/adminlte.js'
       }

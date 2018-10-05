@@ -46,7 +46,7 @@ body {
   @transition-rule: @transition-speed @transition-fn,
   margin @transition-speed @transition-fn;
   .transition-transform(@transition-rule);
-  margin-left: @sidebar-width;
+  //margin-left: @sidebar-width;
   z-index: 820;
   // Top nav layout
   .layout-top-nav & {
@@ -69,10 +69,17 @@ body {
   }
 }
 
-.content-wrapper  {
+.content-wrapper {
   min-height: 100%;
   background-color: @content-bg;
   z-index: 800;
+}
+
+/**
+ * 有 sidebar 才要 margin-left
+ */
+.main-sidebar + .content-wrapper {
+  margin-left: @sidebar-width;
 }
 
 .main-footer {
@@ -80,6 +87,7 @@ body {
   padding: 15px;
   color: #444;
   border-top: 1px solid @gray-lte;
+  margin-left: @sidebar-width;
 }
 
 /* Fixed layout */
