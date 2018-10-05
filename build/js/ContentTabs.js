@@ -142,7 +142,8 @@ $(function () {
             // 添加标签页
             $(Selector.pageTabContent).append('<a href="javascript:;" class="page-tab active" data-url="' + menuUrl + '"><i class="' + menuIcon + '"></i> ' + menuName + '&nbsp;&nbsp;<i class="fa fa-times-circle"></i></a>');
             // 隐藏所有 iframe 并添加选项卡对应的 iframe
-            $(Selector.iframe).hide().parents(Selector.contentIframe).append('<iframe width="100%" height="100%" frameborder="0" src="' + menuUrl + '" data-url="' + menuUrl + '" seamless></iframe>');
+            $(Selector.iframe).hide();
+            $(Selector.contentIframe).append('<iframe width="100%" height="100%" frameborder="0" src="' + menuUrl + '" data-url="' + menuUrl + '" seamless></iframe>');
 
             scrollToTab($(Selector.activePageTab));
         }
