@@ -1,22 +1,65 @@
 .content-tabs {
-  border-bottom: solid 2px #2f4050;
+  background: #f9fafc;
+  border-bottom: solid 1px #d2d6de;
 }
 
+// 按钮
+.content-tabs .roll-nav {
+  background: #fff;
+  color: #777;
+}
+
+.content-tabs .roll-nav:hover {
+  background: #fafafa;
+  color: #000;
+}
+
+.content-tabs .roll-left {
+  border-right: 1px solid #d2d6de;
+}
+
+.content-tabs .roll-right {
+  border-left: 1px solid #d2d6de;
+}
+
+// 标签页文字和图标
 .page-tabs a {
-  color: #999;
+  border-right: 1px solid #d2d6de;
 }
 
+.page-tabs a,
 .page-tabs a i {
-  color: #ccc;
+  color: #777;
 }
 
-.page-tabs a.active {
-  background: #2f4050;
+.page-tabs a:hover {
+  background: #f4f4f5;
+  color: #000;
+}
+
+.page-tab-close {
+  color: #ccc !important;
+}
+
+.page-tab-close:hover {
+  color: #000 !important;
+}
+
+// 选中标签页
+.page-tabs a.active,
+.page-tabs a.active i {
+  background: #222d32;
   color: #fff;
 }
 
-.page-tabs a.active:hover,
-.page-tabs a.active i:hover {
-  background: #293846;
-  color: #fff;
+.page-tabs a.active:hover {
+  background: #1e282c;
 }
+
+.page-tabs a.active i.page-tab-close:hover {
+  color: #fff !important;
+}
+
+//.page-tabs a.active i.page-tab-close {
+//  color:;
+//}

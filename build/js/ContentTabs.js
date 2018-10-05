@@ -19,6 +19,7 @@ $(function () {
         pageTabs: ".page-tabs",
         pageTabContent: ".page-tabs-content",
         pageTab: ".page-tab",
+        pageTabClose: ".page-tab-close",
         activePageTab: ".page-tab.active",
         pinPageTab: ".page-tab.pin",
         tabLeft: ".page-tabs-left",
@@ -140,7 +141,7 @@ $(function () {
             // 清除所有标签页选中
             $(Selector.pageTab).removeClass(State.active);
             // 添加标签页
-            $(Selector.pageTabContent).append('<a href="javascript:;" class="page-tab active" data-url="' + menuUrl + '"><i class="' + menuIcon + '"></i> ' + menuName + '&nbsp;&nbsp;<i class="fa fa-times-circle"></i></a>');
+            $(Selector.pageTabContent).append('<a href="javascript:;" class="page-tab active" data-url="' + menuUrl + '"><i class="' + menuIcon + '"></i> ' + menuName + '&nbsp;&nbsp;<i class="page-tab-close fa fa-times-circle"></i></a>');
             // 隐藏所有 iframe 并添加选项卡对应的 iframe
             $(Selector.iframe).hide();
             $(Selector.contentIframe).append('<iframe width="100%" height="100%" frameborder="0" src="' + menuUrl + '" data-url="' + menuUrl + '" seamless></iframe>');
@@ -186,7 +187,7 @@ $(function () {
     });
 
     // 关闭标签页
-    $(Selector.pageTabs).on("click", Selector.pageTab + " i[class='fa fa-times-circle']", function () {
+    $(Selector.pageTabs).on("click", Selector.pageTabClose, function () {
         var $this = $(this),
             $pageTab = $this.parents(Selector.pageTab),
             closeTabUrl = $pageTab.data("url")/*,
