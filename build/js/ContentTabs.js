@@ -114,8 +114,7 @@ $(function () {
     // 点击菜单
     $(Selector.menu).on("click", function () {
         // 获取菜单数据
-        var /*flag = true,*/
-            $this = $(this),
+        var $this = $(this),
             menu = $this.find("a"),
             menuUrl = menu.attr("href"),
             menuName = $.trim(menu.text()),
@@ -133,10 +132,7 @@ $(function () {
                 pageTab.addClass(State.active).siblings(Selector.pageTab).removeClass(State.active);
                 // 显示标签页对应的 iframe
                 $(Selector.iframe + "[src='" + menuUrl + "']").show().siblings(Selector.iframe).hide();
-
-                scrollToTab(this);
             }
-            // flag = false;
         } else {
             // 清除所有标签页选中
             $(Selector.pageTab).removeClass(State.active);
@@ -145,9 +141,9 @@ $(function () {
             // 隐藏所有 iframe 并添加选项卡对应的 iframe
             $(Selector.iframe).hide();
             $(Selector.contentIframe).append('<iframe width="100%" height="100%" frameborder="0" src="' + menuUrl + '" data-url="' + menuUrl + '" seamless></iframe>');
-
-            scrollToTab($(Selector.activePageTab));
         }
+
+        scrollToTab($(Selector.activePageTab));
 
         // 激活菜单
         $(Selector.menu).removeClass(State.active);
